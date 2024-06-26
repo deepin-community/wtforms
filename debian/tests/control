@@ -1,0 +1,9 @@
+Tests:
+ upstream
+Depends:
+ python3-all,
+ python3-babel,
+ python3-email-validator,
+ python3-pytest,
+ python3-wtforms,
+Restrictions: allow-stderr

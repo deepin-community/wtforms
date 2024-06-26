@@ -1,0 +1,3 @@
+docs/_build/
+WTForms.egg-info/
+wtforms/locale/*/LC_MESSAGES/wtforms.mo

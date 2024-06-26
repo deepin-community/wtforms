@@ -1,4 +1,29 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+#export DH_VERBOSE=1
+
+include /usr/share/dpkg/pkg-info.mk
+
+BUILD_DATE  = $(shell LC_ALL=C date -u "+%d %B %Y" -d "@$(SOURCE_DATE_EPOCH)")
+SPHINXOPTS := -N -D html_last_updated_fmt="$(BUILD_DATE)"
+
+export PYBUILD_NAME=wtforms
+export PYBUILD_AFTER_INSTALL=rm -rf {destdir}/usr/lib/python3*/dist-packages/wtforms/locale/README.md
 
 %:
-	dh $@
+	dh $@ --buildsystem=pybuild
+
+override_dh_auto_test:
+	dh_auto_test -- --system=custom --test-args="PYTHONPATH={build_dir} {interpreter} -m pytest"
+
+override_dh_auto_build:
+	pybabel compile -D wtforms -d src/wtforms/locale
+	dh_auto_build
+
+override_dh_sphinxdoc:
+ifeq (,$(findstring nodoc, $(DEB_BUILD_OPTIONS)))
+	PYTHONPATH=`dirname $$(find .pybuild/ -type d -name "wtforms*dist-info" | head -n1)` \
+	    python3 -m sphinx -b html $(SPHINXOPTS) docs $(CURDIR)/debian/python-wtforms-doc/usr/share/doc/python-wtforms-doc/html
+	dh_sphinxdoc
+endif
