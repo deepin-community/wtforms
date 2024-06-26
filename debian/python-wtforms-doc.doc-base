@@ -1,0 +1,10 @@
+Document: wtforms
+Title: WTForms Developer Manual
+Author: 2014 by Thomas Johansson, James Crasta and others.
+Abstract: This manual describes the API of
+ the WTForms Python package.
+Section: Web Development
+
+Format: HTML
+Index: /usr/share/doc/python-wtforms-doc/html/index.html
+Files: /usr/share/doc/python-wtforms-doc/html/*

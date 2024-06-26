@@ -1,0 +1,24 @@
+From: Carsten Schoenert <c.schoenert@t-online.de>
+Date: Mon, 21 Nov 2022 08:57:13 +0100
+Subject: docs: Don't use external intersphinx
+
+Use objects.inv information from local installed packages.
+
+Forwarded: Not-Needed
+---
+ docs/conf.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/docs/conf.py b/docs/conf.py
+index afd60ff..412e662 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -20,7 +20,7 @@ extensions = [
+     "sphinxcontrib.log_cabinet",
+ ]
+ intersphinx_mapping = {
+-    "python": ("https://docs.python.org/3/", None),
++    "python": ("/usr/share/doc/python3-doc/html", None),
+ }
+ issues_github_path = "wtforms/wtforms"
+ 

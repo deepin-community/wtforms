@@ -1,5 +1,258 @@
-template-repository (1.0-1) unstable; urgency=medium
+wtforms (3.1.2-1) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
+  * New upstream release.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Colin Watson <cjwatson@debian.org>  Tue, 30 Apr 2024 17:04:09 +0100
+
+wtforms (3.1.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * [c00bbdc] New upstream version 3.1.1
+  * [4ddd04b] d/control: Update and switch build dependencies
+  * [aac36c0] d/rules: Drop --with option within default target
+  * [2995089] d/rules: Adjust Sphinx based build
+  * [84342dc] autopkgtest: Adjust setup due upstream changes
+  * [a1261c8] d/control: Bump Standards-Version to 4.6.2
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Mon, 01 Jan 2024 11:34:45 +0100
+
+wtforms (3.0.1-2) unstable; urgency=medium
+
+  * Team upload.
+  * autopkgtest: Re-add python3-babel as dep
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Tue, 22 Nov 2022 23:17:58 +0100
+
+wtforms (3.0.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * d/watch: Switch to version 4, move to git mode
+  * d/gbp.conf: Add some basic default configuration
+  * New upstream version 3.0.1
+  * Rebuild patch queue from patch-queue branch
+    Added patch:
+    docs-Don-t-use-external-intersphinx.patch
+    Removed patch (obsolete):
+    has_source
+  * d/copyright: Update upstream data and content
+  * d/README.source: Adding base information about source
+  * d/u/metadata: Add data for FAQ entry
+  * d/control: Run wrap-and-sort -ast
+    No modifications, just reorder the existing data.
+  * d/control: Sort binary packages alphabetical
+    Increasing the readability as human like to see things in a alphabetical
+    order.
+  * d/control: Remove not needed, add new required build dependencies
+    The version bump to 3 comes wit a lot a upstream changes that making some
+    packages not needed any more for the package build, otoh we need other
+    newly packages for the test suite and the documentation to build.
+  * python-wtforms-doc: Use dh_sphinxdoc for package build
+  * d/rules: Adjust test suite call using pytest
+  * d/rules: Adjust package build steps
+  * d/control: Bump Standards-Version to 4.6.1
+    No further changes needed.
+  * d/control: Set Rules-Requires-Root: no
+    No root privileges needed for the package build.
+  * d/control: Update the package descriptions
+  * autopkgtest: Update testing setup to use pytest
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Mon, 21 Nov 2022 20:42:31 +0100
+
+wtforms (2.2.1-6) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set field Upstream-Contact in debian/copyright.
+  * Remove obsolete field Contact from debian/upstream/metadata (already present
+    in machine-readable debian/copyright).
+  * Update standards version to 4.1.5, no changes needed.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Mon, 21 Nov 2022 18:25:49 +0000
+
+wtforms (2.2.1-5) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints. + python-wtforms-doc: Add Multi-Arch: foreign.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sat, 22 Oct 2022 11:36:42 +0100
+
+wtforms (2.2.1-4) unstable; urgency=medium
+
+  * Team upload.
+  * [85c5192] compile gettext translations during build and distribute in pkg
+    (Closes: #1016567)
+  * [a2d69e6] fix running testsuite during build
+  * [79f7b40] skip broken ext_sqlalchemy tests -- unsupported by upstream
+    see: https://github.com/wtforms/wtforms/issues/696
+  * [ae6c355] run upstream tests as autopkgtest
+
+ -- Joseph Nahmias <jello@debian.org>  Wed, 03 Aug 2022 22:49:31 -0400
+
+wtforms (2.2.1-3) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Use correct machine-readable copyright file URI.
+  * Bump debhelper from deprecated 9 to 12.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 12 to 13.
+  * Set upstream metadata fields: Contact.
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 04 Jun 2022 22:05:51 -0400
+
+wtforms (2.2.1-2) unstable; urgency=medium
+
+  * Team upload.
+  * Use debhelper-compat instead of debian/compat.
+  * Drop Python 2 support.
+
+ -- Ondřej Nový <onovy@debian.org>  Sat, 24 Aug 2019 22:59:54 +0200
+
+wtforms (2.2.1-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+  * Convert git repository from git-dpm to gbp layout
+
+  [ Christoph Berg ]
+  * New upstream version. (Closes: #908277)
+  * Set HAS_SOURCE in docs template, dh_sphinxdoc wants it.
+  * Disable appengine and django tests, missing requirements.
+  * Clean files properly at build time.
+
+ -- Christoph Berg <christoph.berg@credativ.de>  Mon, 01 Oct 2018 12:03:57 +0200
+
+wtforms (2.1-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https)
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+  * d/changelog: Remove trailing whitespaces
+  * d/control: Remove trailing whitespaces
+
+  [ Christoph Berg ]
+  * Fix incompatibility with new sqlalchemy within identity_key().
+    Closes: #893883.
+  * Bump Standards-Version.
+
+ -- Christoph Berg <christoph.berg@credativ.de>  Tue, 08 May 2018 09:30:19 +0200
+
+wtforms (2.1-1) unstable; urgency=low
+
+  * Team upload.
+
+  * Drop django extension and hence django deps. This extensions
+  is deprecated upstream in the 2.0 release and it is generating
+  tests failures with the django in testing.
+  * Use python-coverage to run tests Closes: #808693
+  * Remove useless patches due to removing the django extension
+  * New upstream release
+
+ -- Orestis Ioannou <orestis@oioannou.com>  Tue, 08 Dec 2015 00:59:56 +0100
+
+wtforms (2.0.2-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Vincent Bernat ]
+  * Fix long description of python3-wtforms and python-wtforms-doc.
+    Closes: #800076.
+
+  [ Orestis Ioannou ]
+  * Add django-localflavor dependency Closes: #801940
+  * Add doc-base document
+  * Use DEP-5 standard license names in copyright
+  * New VCS fields due to the git transition
+  * Change in maintainership
+  * Moved d/compat to version 9
+
+ -- Orestis Ioannou <orestis@oioannou.com>  Fri, 23 Oct 2015 22:40:56 +0200
+
+wtforms (2.0.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release. Closes: #751835, #738757.
+  * Add python 3 package. Closes: #780600, #782966.
+  * copyright file updated to DEP-5
+  * Switched to pybuild
+  * Moved to Standards-Version: 3.9.6
+  * Switched to 3.0 quilt patch format
+  * Added a patch to fix failing tests due to Django not being setup
+  * Created separate documentation package
+  * Make the build reproducible by using last changelog entry as today
+    date for documentation. Closes: #788599. Thanks to Juan Picca for the
+    patch.
+  * Add a symlink to the appropriate CSS for documentation.
+
+ -- Orestis Ioannou <orestis@oioannou.com>  Mon, 14 Sep 2015 17:51:19 +0200
+
+wtforms (2.0.1-1) unstable; urgency=medium
+
+  * New upstream version
+  * Add python-setuptools as build-dependency
+
+ -- Bernd Zeimetz <bzed@debian.org>  Sun, 05 Oct 2014 12:32:12 +0200
+
+wtforms (1.0.5-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+  [ Christian Hofstaedtler ]
+  * New upstream version.
+  * Upstream has moved, update debian/watch file.
+  * Replace sphinx-bundled underscore.js with link to libjs-underscore.
+  * Bump Standards-Version to 3.9.5, no changes needed.
+
+ -- Christian Hofstaedtler <zeha@debian.org>  Sat, 26 Jul 2014 23:53:44 +0200
+
+wtforms (1.0.1-1) unstable; urgency=low
+
+  [ Bernd Zeimetz ]
+  * New upstream version.
+  * Set PYTHONPATH for tests.
+  * Ignoring test results for now, they fail due to missing translations.
+  * Migrate to dh_python2
+
+  [ Jakub Wilk ]
+  * Add Vcs-* fields.
+
+ -- Bernd Zeimetz <bzed@debian.org>  Sun, 15 Apr 2012 16:38:10 +0200
+
+wtforms (0.6.2-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Bernd Zeimetz <bzed@debian.org>  Wed, 20 Oct 2010 10:57:52 +0200
+
+wtforms (0.6.1-2) unstable; urgency=low
+
+  * Add build dependency on python (>= 2.5.4-5~) | python-pysqlite2
+    for easy backporting.
+  * Running tests requires sqlalchemy >= 0.5.
+  * Sphinx 0.6 is required to build the documentation.
+  * Remove unnecessary 'A' from the short description.
+
+ -- Bernd Zeimetz <bzed@debian.org>  Wed, 20 Oct 2010 10:50:09 +0200
+
+wtforms (0.6.1-1) unstable; urgency=low
+
+  * Initial upload.
+
+ -- Bernd Zeimetz <bzed@debian.org>  Sun, 17 Oct 2010 16:35:10 +0200
